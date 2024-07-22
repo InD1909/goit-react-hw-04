@@ -7,11 +7,7 @@ const ImageModal = ({ isOpen, onRequestClose, image }) => {
   if (!image) return null;
   return (
     <div>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onRequestClose}
-        overlayClassName={css.overlay}
-      >
+      <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
         <p>{image.description || image.alt_description}</p>
         <img src={image.urls.regular} alt={image.alt_description} />
         <button onClick={onRequestClose}>X</button>
