@@ -3,23 +3,20 @@ import s from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ image, onClose }) => {
+const ImageModal = ({ isOpen, onRequestClose, image }) => {
+  if (!image) return null;
   return (
-    <Modal
-      isOpen={!!image}
-      onRequestClose={onClose}
-      contentLabel="Image Modal"
-      overlayClassName={s.overlay}
-    >
-      <button onClick={onClose}>Close</button>
-      {image && (
-        <>
-          <img src={image.urls.regular} alt={image.alt_description} />
-          <p>{image.description || image.alt_description}</p>
-          <p>by {image.user.name}</p>
-        </>
-      )}
-    </Modal>
+    <div>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        overlayClassName={css.overlay}
+      >
+        <p>{image.description || image.alt_description}</p>
+        <img src={image.urls.regular} alt={image.alt_description} />
+        <button onClick={onRequestClose}>X</button>
+      </Modal>
+    </div>
   );
 };
 
