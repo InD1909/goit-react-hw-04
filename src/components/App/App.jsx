@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ImageGallery from "../ImageGallery/ImageGallery";
-import Toaster from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { SearchBar } from "../SearchBar/SearchBar";
 import ImageModal from "../ImageModal/ImageModal";
