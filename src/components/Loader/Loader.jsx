@@ -1,8 +1,9 @@
 import { Rings } from "react-loader-spinner";
+import s from "./Loader.module.css";
 
 const Loader = () => {
   return (
-    <div>
+    <div className={s.div}>
       <Rings
         visible={true}
         height="80"
