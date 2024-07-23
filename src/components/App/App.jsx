@@ -7,6 +7,7 @@ import ImageModal from "../ImageModal/ImageModal";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import s from "./App.module.css";
 
 const API_KEY = "GYd7KEd25K2mefM5GQPU0z00l9SazjjXutll20XOvJ4";
 
@@ -63,7 +64,7 @@ const App = () => {
   };
 
   return (
-    <div className="div">
+    <div className={s.div}>
       <SearchBar onSubmit={handleSearchSubmit} />
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}

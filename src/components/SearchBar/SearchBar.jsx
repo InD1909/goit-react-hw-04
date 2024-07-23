@@ -19,14 +19,17 @@ export const SearchBar = ({ onSubmit }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={s.wrapper}>
         <input
-          placeholder="Search..."
+          placeholder="Search images..."
           type="text"
           value={query}
           onChange={handleInputChange}
+          className={s.searchForm}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={s.searchBtn}>
+          Search
+        </button>
       </form>
     </div>
   );
